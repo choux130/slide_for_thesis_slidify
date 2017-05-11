@@ -238,7 +238,7 @@ body {
 /* line 98, ../scss/default.scss */
 slides > slide {
   display: none;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Arial', Arial, sans-serif;
   font-size: 26px;
   color: #797979;
   width: 900px;
@@ -326,7 +326,7 @@ slides > slide:not(.nobackground):after {
 /* line 194, ../scss/default.scss */
 slides > slide.title-slide:after {
   content: '';
-  /* background: url(../images/io2012_logo.png) no-repeat 100% 50%; */
+  /*background: url(../images/io2012_logo.png) no-repeat 100% 50%;*/
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
@@ -336,6 +336,7 @@ slides > slide.title-slide:after {
   right: 40px;
   width: 100%;
   height: 60px;
+  text-align: center
 }
 /* line 206, ../scss/default.scss */
 slides > slide.backdrop {
@@ -488,17 +489,24 @@ h3 {
 /* line 331, ../scss/default.scss */
 ul {
   margin-left: 1.2em;
+  margin-right: 2em;
   margin-bottom: 1em;
   position: relative;
+  font-size: 25px;
 }
 /* line 336, ../scss/default.scss */
 ul li {
   margin-bottom: 0.5em;
+  margin-right: 2em;
+  font-size: 25px;
+  margin-left: 3em;
 }
 /* line 339, ../scss/default.scss */
 ul li ul {
   margin-left: 2em;
+  margin-right: 2em;
   margin-bottom: 0;
+  font-size: 25px;
 }
 /* line 343, ../scss/default.scss */
 ul li ul li:before {
@@ -1339,13 +1347,15 @@ aside.gdbar img {
 /* line 924, ../scss/default.scss */
 .title-slide hgroup {
   bottom: 100px;
+  text-align: center
 }
 /* line 927, ../scss/default.scss */
 .title-slide hgroup h1 {
-  font-size: 65px;
-  line-height: 1.4;
-  letter-spacing: -3px;
+  font-size: 45px;
+  line-height: 2.0;
+  letter-spacing: -2px;
   color: #515151;
+  padding-top : 50px;
 }
 /* line 934, ../scss/default.scss */
 .title-slide hgroup h2 {
@@ -1355,10 +1365,11 @@ aside.gdbar img {
 }
 /* line 940, ../scss/default.scss */
 .title-slide hgroup p {
-  font-size: 20px;
+  font-size: 25px;
   color: #797979;
   line-height: 1.3;
   margin-top: 2em;
+  text-align: center
 }
 
 /* line 949, ../scss/default.scss */

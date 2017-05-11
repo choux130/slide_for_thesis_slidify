@@ -34,6 +34,7 @@
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
     <h1>Analysis of Size-Biased Mitochondria Data</h1>
+    <img src="assets/img/mitochondria.png" style="width:400px">
     <h2></h2>
     <p>Yin-Ting Chou<br/>Advisor: Aaron Rendahl<br/></p>
   </hgroup>
@@ -44,13 +45,23 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2><u>Overview</u></h2>
   </hgroup>
   <article data-timings="">
     <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
+<li>Story about Size-Biased Data</li>
+<li>Scientific Background for Mitochondria</li>
+<li>Goals for this project: 
+
+<ul>
+<li>Whether Properties of mitochondria are different by locations. </li>
+<li>Suggestions on sampling scheme for future research. </li>
+</ul></li>
+<li>How Size-Biased Mitochondria Data came from? (Sampling Process)</li>
+<li>Simulation Study </li>
+<li>Permutation Hypothesis Test and Boostrapping Confidence Interval </li>
+<li>Conclusion</li>
+<li>Discussion </li>
 </ol>
 
   </article>
@@ -59,10 +70,121 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2><u>Story about Size-Biased Data</u></h2>
   </hgroup>
   <article data-timings="">
-    
+    <p><br />
+<br />
+<img src="assets/img/fishingnet.jpg" style="width:480px;height:300px;">
+<img src="assets/img/mall.jpg" style="width:480px;height:300px;"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2><u>Scientific Background for Mitochondria</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center>
+<img src="assets/img/muscle.jpg" style="width:700px">
+</center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2><u>Goals for this project: </u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Whether Properties (area, perimeter, circularity and aspect ratio) of mitochondria are different by locations (proximal, middle and distal end). </li>
+<li>Suggestions on sampling scheme for future research. </li>
+</ol>
+
+<p><center>
+<img src="assets/img/location_cartoon.png" style="width:600px">
+</center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2><u>Sampling Process - 1</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>A young muscle fiber cell was magnifired to 166 different images by using Transmission Electron Microscope (TEM). 
+<br />
+<br />
+<center>
+<img src="assets/img/cell.png" style="width:600px">
+</center></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2><u>Sampling Process - 2</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Those falls in &quot;{&quot; are defined as beging in Proximal end, in &quot;[&quot; are being in Distal end, and the rest are being in Middle part.
+<br />
+<br />
+<img src="assets/img/location.png" style="width:700px"></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2><u>Sampling Process - 3</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>For each location, divide images into two groups: Subsarcolemmanl and Interfibrillar group. </li>
+<li>In each group, randomly pick one image.</li>
+<li>In each image, randomly pick 20 mitochondria. 
+
+<ol>
+<li>Generate a list of random coordinates. </li>
+<li>If the area of mitochondria in the photo included one or more generated coordinates. 
+<center>
+<img src="assets/img/mitochondria.png" style="width:400px">
+</center></li>
+</ol></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2><u>References</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Photo:
+
+<ol>
+<li>Fishing net: <a href="https://static01.nyt.com/images/2011/08/24/us/24trout_cnd/24trout_cnd-jumbo.jpg">https://static01.nyt.com/images/2011/08/24/us/24trout_cnd/24trout_cnd-jumbo.jpg</a></li>
+<li>Mall : <a href="https://previews.123rf.com/images/antonchalakov/antonchalakov1408/antonchalakov140800057/30920353-People-in-Shopping-Mall-in-Sofia-Bulgaria-Stock-Photo.jpg">https://previews.123rf.com/images/antonchalakov/antonchalakov1408/antonchalakov140800057/30920353-People-in-Shopping-Mall-in-Sofia-Bulgaria-Stock-Photo.jpg</a></li>
+<li>Muscle : <a href="http://images.slideplayer.com/27/9024081/slides/slide_3.jpg">http://images.slideplayer.com/27/9024081/slides/slide_3.jpg</a></li>
+</ol></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -73,14 +195,50 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='<u>Overview</u>'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='<u>Story about Size-Biased Data</u>'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='<u>Scientific Background for Mitochondria</u>'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='<u>Goals for this project: </u>'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='<u>Sampling Process - 1</u>'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='<u>Sampling Process - 2</u>'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='<u>Sampling Process - 3</u>'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='<u>References</u>'>
+         8
       </a>
     </li>
   </ul>

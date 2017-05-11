@@ -43,7 +43,7 @@
 
 /* Fonts and Spacing */
 article p, article li, article li.build, section p, section li{
-  font-family: 'Open Sans','Helvetica', 'Crimson Text', 'Garamond',  'Palatino', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
   font-size:22px;
   line-height: 1.5em;
@@ -51,13 +51,15 @@ article p, article li, article li.build, section p, section li{
 }
 
 slide:not(.segue) h2{
-  font-family: 'Calibri', Arial, sans-serif;
-  font-size: 52px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
   font-style: normal;
   font-weight: bold;
   text-transform: normal;
   letter-spacing: -2px;
-  line-height: 1.2em;
+  line-height: 1.5em;
+  padding-top: 5px;
+  padding-left: 30px;
 /*  color: #193441;*/
 /*  color: #02574D;*/
   color: #CC2904;
@@ -88,7 +90,7 @@ iframe {
 
 /* Quotes and Shout (for io2012, custom) */
 article q {
-  font-family: 'Crimson Text', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 q {
@@ -146,7 +148,7 @@ q.shout:after {
 table caption{
   margin-top: 20pt;
   font-weight: normal;
-  font-family: "Trebuchet MS", Garuda, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 table th {
@@ -161,7 +163,7 @@ table {
   border-collapse: collapse;
   font-size: 24px;
   line-height: 32px;
-  font-family: 'Trebuchet MS';
+  font-family: 'Arial';
   font-weight: bolder;
   color: rgb(102, 102, 102);
 }
@@ -180,6 +182,7 @@ table th {
   color: #575400;
   text-transform: uppercase;
 }
+
 table td {
   border-bottom: 1px solid #CFCEBD;
 }
@@ -192,22 +195,33 @@ table tr:nth-child(2n+1) {
 
 ol {
   margin-left: 1.2em;
+  margin-right: 2em;
   margin-bottom: 1em;
   postion: relative;
+  padding-left: 55px;
+  font-size: 25px;
 }
 
 ol li {
   margin-bottom: 0.5em;
-  font-family: "Open Sans";
+  margin-left: 0.5em;
+  font-family: "Arial";
+  font-size: 25px;
+  margin-right: 2em;
 }
 
 ol li ol {
   margin-left: 0.5em;
+  margin-right: 2em;
   margin-bottom: 0;
+  font-size: 25px;
 }
 
 ol, ul {
   margin-top: .5em;
+  font-size: 25px;
+  margin-left: 1.2em;
+  margin-right: 2em;
 }
 
 ol {
@@ -288,7 +302,7 @@ div.modal-body pre{
 }
 
 body {
-  font-family: "Open Sans";
+  font-family: "Arial";
   color: #444;
 }
 
@@ -324,16 +338,16 @@ body {
   font-size: 1em;
 }
 slide.segue h2{
- font-family: "Open Sans Condensed";
+ font-family: Arial, Helvetica, sans-serif;
  font-weight: 700;
 }
 slide:not(.segue)  h2{
- font-family: "Open Sans Condensed";
+ font-family: Arial, Helvetica, sans-serif;
  font-weight: 700;
- color: darkslategray;
+ color: #7a0019;
 }
 article p {
-  font-family: "Open Sans"
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 code {
@@ -362,5 +376,5 @@ pre code {
 
 .title-slide hgroup > h1,
 .title-slide hgroup > h2 {
-  color: #7a0019 ;  /* ; #EF5150*/
+  color: #7a0019; /*#535E43 ;  /* ; #EF5150*/
 }
