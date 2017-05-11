@@ -1,7 +1,8 @@
 ---
 title       : Analysis of Size-Biased Mitochondria Data
 subtitle    : 
-author      : Yin-Ting Chou
+author1     : Yin-Ting Chou
+author2     : "Advisor: Aaron Rendahl"
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}

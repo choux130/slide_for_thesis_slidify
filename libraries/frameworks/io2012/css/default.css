@@ -326,7 +326,7 @@ slides > slide:not(.nobackground):after {
 /* line 194, ../scss/default.scss */
 slides > slide.title-slide:after {
   content: '';
-  /* background: url(../images/io2012_logo.png) no-repeat 100% 50%; */
+  background: url(../images/io2012_logo.png) no-repeat 100% 50%; 
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
@@ -336,6 +336,7 @@ slides > slide.title-slide:after {
   right: 40px;
   width: 100%;
   height: 60px;
+  text-align: center
 }
 /* line 206, ../scss/default.scss */
 slides > slide.backdrop {
@@ -1338,14 +1339,16 @@ aside.gdbar img {
 
 /* line 924, ../scss/default.scss */
 .title-slide hgroup {
-  bottom: 100px;
+  bottom: 250px;
+  text-align: center
 }
 /* line 927, ../scss/default.scss */
 .title-slide hgroup h1 {
-  font-size: 65px;
+  font-size: 45px;
   line-height: 1.4;
   letter-spacing: -3px;
   color: #515151;
+
 }
 /* line 934, ../scss/default.scss */
 .title-slide hgroup h2 {
@@ -1355,10 +1358,11 @@ aside.gdbar img {
 }
 /* line 940, ../scss/default.scss */
 .title-slide hgroup p {
-  font-size: 20px;
+  font-size: 25px;
   color: #797979;
   line-height: 1.3;
   margin-top: 2em;
+  text-align: center
 }
 
 /* line 949, ../scss/default.scss */
