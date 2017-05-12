@@ -53,33 +53,38 @@ knit        : slidify::knit2slides
 --- .class #id 
 
 ## <u>Sampling Process - 1</u>
-* A young muscle fiber cell was magnifired to 166 different images by using Transmission Electron Microscope (TEM). 
-<br />
-<br />
-<center>
-<img src="assets/img/cell.png" style="width:600px">
-</center>
+> * A young muscle fiber cell was magnifired to 166 different images by using Transmission Electron Microscope (TEM). 
+> * Those falls in <b>" { "</b> are defined as beging in <b>Proximal end</b>, in <b>" [ "</b> are being in <b>Distal end</b>, and the rest are being in <b>Middle part</b>.
+</br><br />
+> <img src="assets/img/cell.png" style="width:400px">
+> <img src="assets/img/location.png" style="width:400px">
 
 --- .class #id 
 
 ## <u>Sampling Process - 2</u>
-* Those falls in "{" are defined as beging in Proximal end, in "[" are being in Distal end, and the rest are being in Middle part.
-<br />
-<br />
-<img src="assets/img/location.png" style="width:700px">
-
+* For each location, divide images into two groups: Subsarcolemmanl and Interfibrillar group. 
+* In each group, randomly pick one image.
 
 --- .class #id 
 
 ## <u>Sampling Process - 3</u>
-1. For each location, divide images into two groups: Subsarcolemmanl and Interfibrillar group. 
-2. In each group, randomly pick one image.
-3. In each image, randomly pick 20 mitochondria. 
-  1. Generate a list of random coordinates. 
-  2. If the area of mitochondria in the photo included one or more generated coordinates. 
+> * In each image, randomly pick <b>20 mitochondria</b>. 
+> * Generate a list of random coordinates. 
+> * Pick the mitochondria whose area in the photo includes one or more generated coordinates. 
+</br><br/>
 <center>
-<img src="assets/img/mitochondria.png" style="width:400px">
+<img src="assets/img/mitochondria.png" style="width:350px">
 </center>
+
+--- .class #id 
+
+## <u>Raw Data</u>
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results = 'asis'}
+library(googleVis)
+datt=read.csv("/Users/chou/Google Drive/UMN2014-2016/Spring2016/Plan B/final/clean_dat.csv",header=TRUE)
+tab = gvisTable(datt, formats=list(width=200, height=270))
+print(tab)
+```
 
 --- .class #id 
 ## <u>References</u>

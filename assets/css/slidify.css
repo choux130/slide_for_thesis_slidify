@@ -33,12 +33,26 @@
 
 
 /* Styles for Title Slide */
+.title-slide {
+  background-color: #FFFFFF; /* #EDE0CF; ; #CA9F9D*/
+  /* background-image:url(http://goo.gl/EpXln); */
+}
+
+
 .title-slide hgroup > h1{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
+  font-size: 45px;
+  line-height: 2.5;
+  letter-spacing: -2px;
+  color: #7a0019 ;
 }
 
 .title-slide hgroup > h2{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
+}
+
+.title-slide hgroup > p{
+  font-family: sans-serif;
 }
 
 /* Fonts and Spacing */
@@ -191,27 +205,39 @@ table tr:nth-child(2n+1) {
 /* Styling for Ordered Lists (only for io2012) */
 
 ol {
-  margin-left: 1.2em;
+  margin-left: 3em;
   margin-bottom: 1em;
   postion: relative;
+  margin-right: 2em;
 }
 
 ol li {
   margin-bottom: 0.5em;
+  margin-right: 2em;
+  font-family: "Open Sans";
+}
+
+ul li {
+  margin-bottom: 0.5em;
+  margin-right: 2em;
   font-family: "Open Sans";
 }
 
 ol li ol {
   margin-left: 0.5em;
+  margin-right: 2em;
   margin-bottom: 0;
 }
 
 ol, ul {
   margin-top: .5em;
+  margin-left: 3em;
+  margin-right: 2em;
 }
 
 ol {
   list-style-type: decimal;
+  margin-right: 2em;
 }
 
 /*Github Ribbon Test*/
@@ -328,9 +354,13 @@ slide.segue h2{
  font-weight: 700;
 }
 slide:not(.segue)  h2{
- font-family: "Open Sans Condensed";
+ /*font-family: "Open Sans Condensed";*/
  font-weight: 700;
- color: darkslategray;
+ /*color: darkslategray;*/
+ font-family: sans-serif;
+ color: #7a0019 ;
+ font-size: 45px;
+ margin-top: 15px;
 }
 article p {
   font-family: "Open Sans"
@@ -349,18 +379,4 @@ pre code {
 
 #glimmer iframe {
   width: 100%;
-}
-
-.title-slide {
-  background-color: #FFFFFF; /* #EDE0CF; ; #CA9F9D*/
-  /* background-image:url(http://goo.gl/EpXln); */
-}
-
-.title-slide hgroup > h1{
- font-family: Arial, Helvetica, sans-serif;
-}
-
-.title-slide hgroup > h1,
-.title-slide hgroup > h2 {
-  color: #7a0019 ;  /* ; #EF5150*/
 }

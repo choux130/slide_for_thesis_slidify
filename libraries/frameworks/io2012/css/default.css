@@ -1338,13 +1338,13 @@ aside.gdbar img {
 
 /* line 924, ../scss/default.scss */
 .title-slide hgroup {
-  bottom: 100px;
+  bottom: 50px;
 }
 /* line 927, ../scss/default.scss */
 .title-slide hgroup h1 {
   font-size: 65px;
   line-height: 1.4;
-  letter-spacing: -3px;
+  letter-spacing: -1px;
   color: #515151;
 }
 /* line 934, ../scss/default.scss */
