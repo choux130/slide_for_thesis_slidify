@@ -83,7 +83,7 @@ knit        : slidify::knit2slides
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>TableID13b40731874da</title>
+<title>TableID1456c4675082a</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <style type="text/css">
 body {
@@ -99,14 +99,14 @@ body {
 </head>
 <body>
  <!-- Table generated in R 3.3.2 by googleVis 0.6.2 package -->
-<!-- Fri May 12 08:44:06 2017 -->
+<!-- Fri May 12 10:23:10 2017 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataTableID13b40731874da () {
+function gvisDataTableID1456c4675082a () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -2050,8 +2050,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartTableID13b40731874da() {
-var data = gvisDataTableID13b40731874da();
+function drawChartTableID1456c4675082a() {
+var data = gvisDataTableID1456c4675082a();
 var options = {};
 options["allowHtml"] = true;
 
@@ -2061,7 +2061,7 @@ options["allowHtml"] = true;
   dataFormat2.format(data, NA);
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID13b40731874da')
+    document.getElementById('TableID1456c4675082a')
     );
     chart.draw(data,options);
     
@@ -2085,9 +2085,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID13b40731874da);
+callbacks.push(drawChartTableID1456c4675082a);
 })();
-function displayChartTableID13b40731874da() {
+function displayChartTableID1456c4675082a() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -2111,14 +2111,14 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID13b40731874da"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID1456c4675082a"></script>
  
 <!-- divChart -->
   
-<div id="TableID13b40731874da" 
+<div id="TableID1456c4675082a" 
   style="width: 500; height: automatic;">
 </div>
- <div><span>Data: datt &#8226; Chart ID: <a href="Chart_TableID13b40731874da.html">TableID13b40731874da</a> &#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br /> 
+ <div><span>Data: datt &#8226; Chart ID: <a href="Chart_TableID1456c4675082a.html">TableID1456c4675082a</a> &#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br /> 
 <!-- htmlFooter -->
 <span> 
   R version 3.3.2 (2016-10-31) 
@@ -2134,4 +2134,5 @@ callbacks.shift()();
   2. Mall : [https://previews.123rf.com/images/antonchalakov/antonchalakov1408/antonchalakov140800057/30920353-People-in-Shopping-Mall-in-Sofia-Bulgaria-Stock-Photo.jpg](https://previews.123rf.com/images/antonchalakov/antonchalakov1408/antonchalakov140800057/30920353-People-in-Shopping-Mall-in-Sofia-Bulgaria-Stock-Photo.jpg)
   3. Muscle : [http://images.slideplayer.com/27/9024081/slides/slide_3.jpg](http://images.slideplayer.com/27/9024081/slides/slide_3.jpg)
 
-
+--- .class #id 
+## <u>References</u>
