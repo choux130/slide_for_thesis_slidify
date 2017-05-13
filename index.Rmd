@@ -7,7 +7,7 @@ job         :
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : mathjax           # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
@@ -53,11 +53,11 @@ knit        : slidify::knit2slides
 --- .class #id 
 
 ## <u>Sampling Process - 1</u>
-> * A young muscle fiber cell was magnifired to 166 different images by using Transmission Electron Microscope (TEM). 
-> * Those falls in <b>" { "</b> are defined as beging in <b>Proximal end</b>, in <b>" [ "</b> are being in <b>Distal end</b>, and the rest are being in <b>Middle part</b>.
+* A young muscle fiber cell was magnifired to 166 different images by using Transmission Electron Microscope (TEM). 
+* Those falls in <b>" { "</b> are defined as beging in <b>Proximal end</b>, in <b>" [ "</b> are being in <b>Distal end</b>, and the rest are being in <b>Middle part</b>.
 </br><br />
-> <img src="assets/img/cell.png" style="width:400px">
-> <img src="assets/img/location.png" style="width:400px">
+<img src="assets/img/cell.png" style="width:400px">
+<img src="assets/img/location.png" style="width:400px">
 
 --- .class #id 
 
@@ -68,9 +68,9 @@ knit        : slidify::knit2slides
 --- .class #id 
 
 ## <u>Sampling Process - 3</u>
-> * In each image, randomly pick <b>20 mitochondria</b>. 
-> * Generate a list of random coordinates. 
-> * Pick the mitochondria whose area in the photo includes one or more generated coordinates. 
+* In each image, randomly pick <b>20 mitochondria</b>. 
+* Generate a list of random coordinates. 
+* Pick the mitochondria whose area in the photo includes one or more generated coordinates. 
 </br><br/>
 <center>
 <img src="assets/img/mitochondria.png" style="width:350px">
@@ -79,19 +79,168 @@ knit        : slidify::knit2slides
 --- .class #id 
 
 ## <u>Raw Data</u>
-```{r, echo=FALSE, message=FALSE, warning=FALSE, results = 'asis'}
-library(googleVis)
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results= "asis"}
+# remove.packages('plotly')
+# remove.packages('ggplot2')
+# devtools::install_github('hadley/ggplot2')
+# devtools::install_github("ropensci/plotly")
+# install_github('ramnathv/slidify', ref = github_pull(425))
+# pkgs = c('slidify', 'slidifyLibraries', 'rChart', 'ggplot2')
+# install_github(pkgs, 'ramnathv', ref = 'dev')
+# update.packages("plotly")
+# update.packages("ggplot2")
+# library(devtools)
+library(devtools)
+library(slidify)
+library(slidifyLibraries)
+library(ggplot2)
+library(plotly)
+library(DT)
+
+# options(gvis.plot.tag="chart")
 datt=read.csv("/Users/chou/Google Drive/UMN2014-2016/Spring2016/Plan B/final/clean_dat.csv",header=TRUE)
-tab = gvisTable(datt, formats=list(width=200, height=270))
-print(tab)
+dat = datt[,-c(1,4,5)]
+names(dat) = c("Sample ID", "# in image", "image No.", 
+                "image name", "location", "PMD", "SI", 
+                "Area", "Perimeter", "Circularity",
+                "Aspect Ratio")
+d=datatable(dat)
+htmlwidgets::saveWidget(as_widget(d), file = "dat.html")
+```
+<iframe src="dat.html" allowtransparency="true"></iframe>
+
+--- .class #id 
+
+## <u>Problems</u>
+1. It is not random sample. 
+2. The larger mitochondria are easier to be picked in our sample. 
+3. It is size-biased! 
+
+--- .class #id 
+
+## <u>Goals for this project: </u>
+1. <font color="red"> What is the appropriate estimator for the size-biased data? </font> <br />
+<font color = "green"><b>A: Simulation Study.</b></font>
+
+2. Whether Properties (area, perimeter, circularity and aspect ratio) of mitochondria are different by locations (proximal, middle and distal end). <br />
+<font color = "green"><b>A: Permutation Test and Boostrapping Confidence Interval.</b></font>
+
+3. Suggestions on sampling scheme for future research.<br />
+<font color = "green"><b>A: Based on the Simulation Study. </b></font>
+
+--- .class #id 
+
+## <u>Data Exploration: </u>
+* <b>Area $({\mu m}^{2})$:</b> <br />
+  The area occupied by a mitochondrion in an image. 
+* <b>Perimeter $(\mu m)$:</b> <br />
+  The length of the boundary of a mitochondrion in an image.
+* <b>Circularity: </b><br />
+Circularity is equal to $\frac{4 \pi Area}{Perimeter^2}$. <br /> 
+(Measuring the resemblance of a mitochondrion to a circle. The range of circularity is     between 0 and 1.  1 means a perfect circle.)
+* <b>Aspect Ratio:</b> <br />
+  Aspect Ratio is equal to $\frac{Length}{Width}$. <br />
+  (If $AR \leq 2$, it is considered short; if $2 < AR \leq 4$, intermediate; if $AR > 4$, long.)
+
+--- &twocol #id 
+
+## <u>Data Exploration: Area</u>
+```{r echo=FALSE, message=FALSE, warning=FALSE, results= "asis"}
+hist_PMD_a=ggplot(datt, aes(x=Area, color=PMD, fill=PMD))+
+  geom_histogram(aes(y=..density..), alpha=0.5,
+                 position="identity")+
+  geom_density(alpha=.3)
+box_PMD_a=ggplot(datt, aes(x=PMD, y=Area, fill=PMD)) + 
+  geom_boxplot() +
+  geom_point(position = position_jitter(h=0,w=0.3))
+
+p1 <- ggplotly(hist_PMD_a)
+htmlwidgets::saveWidget(as_widget(p1), file = "hist_a.html")
+p2 <- ggplotly(box_PMD_a)
+htmlwidgets::saveWidget(as_widget(p2), file = "box_a.html")
 ```
 
---- .class #id 
-## <u>References</u>
-* Photo:
-  1. Fishing net: [https://static01.nyt.com/images/2011/08/24/us/24trout_cnd/24trout_cnd-jumbo.jpg](https://static01.nyt.com/images/2011/08/24/us/24trout_cnd/24trout_cnd-jumbo.jpg)
-  2. Mall : [https://previews.123rf.com/images/antonchalakov/antonchalakov1408/antonchalakov140800057/30920353-People-in-Shopping-Mall-in-Sofia-Bulgaria-Stock-Photo.jpg](https://previews.123rf.com/images/antonchalakov/antonchalakov1408/antonchalakov140800057/30920353-People-in-Shopping-Mall-in-Sofia-Bulgaria-Stock-Photo.jpg)
-  3. Muscle : [http://images.slideplayer.com/27/9024081/slides/slide_3.jpg](http://images.slideplayer.com/27/9024081/slides/slide_3.jpg)
+*** =left
+<iframe src="hist_a.html" allowtransparency="true"></iframe>
 
---- .class #id 
-## <u>References</u>
+*** =right
+<iframe src="box_a.html" allowtransparency="true"></iframe>
+
+--- &twocol #id 
+
+## <u>Data Exploration: Perimeter</u>
+```{r echo=FALSE, message=FALSE, warning=FALSE, results= "asis"}
+hist_PMD_p=ggplot(datt, aes(x=Perimeter, color=PMD, 
+                            fill=PMD))+ 
+  geom_histogram(aes(y=..density..), alpha=0.5, 
+                 position="identity")+
+  geom_density(alpha=.2) 
+box_PMD_p=ggplot(datt, aes(x=PMD, y=Perimeter, fill=PMD)) +
+  geom_boxplot()+
+  geom_point(position = position_jitter(h=0,w=0.3))
+
+p1_p <- ggplotly(hist_PMD_p)
+htmlwidgets::saveWidget(as_widget(p1_p), file = "hist_p.html")
+p2_p <- ggplotly(box_PMD_p)
+htmlwidgets::saveWidget(as_widget(p2_p), file = "box_p.html")
+```
+
+*** =left
+<iframe src="hist_p.html" allowtransparency="true"></iframe>
+
+*** =right
+<iframe src="box_p.html" allowtransparency="true"></iframe>
+
+--- &twocol #id 
+
+## <u>Data Exploration: Circularity</u>
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, results= "asis"}
+hist_PMD_c=ggplot(datt, aes(x=Circularity, color=PMD, 
+                            fill=PMD))+ 
+  geom_histogram(aes(y=..density..), alpha=0.5, 
+                 position="identity")+
+  geom_density(alpha=.2) 
+box_PMD_c=ggplot(datt,aes(x=PMD,y=Circularity,fill=PMD)) + 
+  geom_boxplot()+
+  geom_point(position = position_jitter(h=0,w=0.3))
+
+p1_c <- ggplotly(hist_PMD_c)
+htmlwidgets::saveWidget(as_widget(p1_c), file = "hist_c.html")
+p2_c <- ggplotly(box_PMD_c)
+htmlwidgets::saveWidget(as_widget(p2_c), file = "box_c.html")
+```
+
+*** =left
+<iframe src="hist_c.html" allowtransparency="true"></iframe>
+
+*** =right
+<iframe src="box_c.html" allowtransparency="true"></iframe>
+
+--- &twocol #id 
+
+## <u>Data Exploration: Aspect Ratio</u>
+```{r echo=FALSE, message=FALSE, warning=FALSE, results= "asis"}
+hist_PMD_ar=ggplot(datt, aes(x=Aspect.Ratio, color=PMD,
+                             fill=PMD))+ 
+  geom_histogram(aes(y=..density..), alpha=0.5, 
+                 position="identity")+
+  geom_density(alpha=.2) 
+
+box_PMD_ar=ggplot(datt, aes(x=PMD, y=Aspect.Ratio, 
+                            fill=PMD)) + 
+  geom_boxplot()+
+  geom_point(position = position_jitter(h=0,w=0.3))
+ 
+p1_ar <- ggplotly(hist_PMD_ar)
+htmlwidgets::saveWidget(as_widget(p1_ar), file = "hist_ar.html")
+p2_ar <- ggplotly(box_PMD_ar)
+htmlwidgets::saveWidget(as_widget(p2_ar), file = "box_ar.html")
+```
+
+*** =left
+<iframe src="hist_ar.html" allowtransparency="true"></iframe>
+
+*** =right
+<iframe src="box_ar.html" allowtransparency="true"></iframe>
