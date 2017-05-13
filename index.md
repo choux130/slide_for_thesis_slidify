@@ -132,6 +132,7 @@ Circularity is equal to $\frac{4 \pi Area}{Perimeter^2}$. <br />
 ## <u>Data Exploration: Perimeter</u>
 
 
+
 *** =left
 <iframe src="hist_p.html" allowtransparency="true"></iframe>
 
@@ -160,3 +161,49 @@ Circularity is equal to $\frac{4 \pi Area}{Perimeter^2}$. <br />
 
 *** =right
 <iframe src="box_ar.html" allowtransparency="true"></iframe>
+
+--- &twocol #id 
+
+## <u>Data Exploration: Scatter Plots</u>
+Perimeter, Circularity and Aspect Ratio
+
+
+<iframe src="scatter.html"></iframe>
+
+--- &twocol #id 
+## <u>Weighted Distribution</u>
+Cox (1962) proposed an idea of Weighted Distribution,
+$${f}^{\ast}(x)=\frac{w(x)f(x)}{{E}_{f}(w(x))}$$
+
+--- &twocol 
+## <u>Candidate Estimators</u>
+
+*** =left width:65%
+* <b>Area:</b> 
+  1. Arithmetic Mean (AM)
+  2. Weighted Mean (WM)
+  3. Maxima Likelihood Estimator (MLE)
+  
+* <b>Perimeter:</b>
+  1. Arithmetic Mean (AM)
+  2. Weighted Mean (WM)
+  3. Delta Method Estimator (DME)
+
+*** =right width:35%
+
+<iframe src="scatter_p.html"></iframe>
+
+--- &twocol 
+## <u>Candidate Estimators</u>
+
+*** =left width:55%
+* <b>Circularity:</b>
+  1. Arithmetic Mean (AM)
+
+* <b>Aspect Ratio:</b>
+  1. Arithmetic Mean (AM)
+
+*** =right width:45%
+
+<iframe src="scatter_c_ar.html"></iframe>
+

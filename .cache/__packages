@@ -4,3 +4,7 @@ googleVis
 slidify
 slidifyLibraries
 shiny
+devtools
+ggplot2
+plotly
+DT
