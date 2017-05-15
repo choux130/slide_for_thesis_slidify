@@ -2,9 +2,9 @@
 layout: slide
 ---
 {{{ slide.content }}}
-<div style='float:left;width:{{{ slide.left.width }}};' class='centered'>
+<div style='float:left; position:absolute; left:1; width:{{{ slide.left.width }}};' class='centered'>
   {{{ slide.left.html }}}
 </div>
-<div style='float:right;width:{{{ slide.right.width }}};'>
+<div style='float:right; position:absolute; right:0; width:{{{ slide.right.width }}};'>
   {{{ slide.right.html }}}
 </div>

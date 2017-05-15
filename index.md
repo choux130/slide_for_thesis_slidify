@@ -121,10 +121,10 @@ Circularity is equal to $\frac{4 \pi Area}{Perimeter^2}$. <br />
 ## <u>Data Exploration: Area</u>
 
 
-*** =left
+*** =left width:50%
 <iframe src="hist_a.html" allowtransparency="true"></iframe>
 
-*** =right
+*** =right width:50%
 <iframe src="box_a.html" allowtransparency="true"></iframe>
 
 --- &twocol #id 
@@ -133,10 +133,10 @@ Circularity is equal to $\frac{4 \pi Area}{Perimeter^2}$. <br />
 
 
 
-*** =left
+*** =left width:50%
 <iframe src="hist_p.html" allowtransparency="true"></iframe>
 
-*** =right
+*** =right width:50%
 <iframe src="box_p.html" allowtransparency="true"></iframe>
 
 --- &twocol #id 
@@ -145,10 +145,10 @@ Circularity is equal to $\frac{4 \pi Area}{Perimeter^2}$. <br />
 
 
 
-*** =left
+*** =left width:50%
 <iframe src="hist_c.html" allowtransparency="true"></iframe>
 
-*** =right
+*** =right width:50%
 <iframe src="box_c.html" allowtransparency="true"></iframe>
 
 --- &twocol #id 
@@ -156,54 +156,142 @@ Circularity is equal to $\frac{4 \pi Area}{Perimeter^2}$. <br />
 ## <u>Data Exploration: Aspect Ratio</u>
 
 
-*** =left
+*** =left width:50%
 <iframe src="hist_ar.html" allowtransparency="true"></iframe>
 
-*** =right
+*** =right width:50%
 <iframe src="box_ar.html" allowtransparency="true"></iframe>
 
 --- &twocol #id 
 
 ## <u>Data Exploration: Scatter Plots</u>
-Perimeter, Circularity and Aspect Ratio
 
 
 <iframe src="scatter.html"></iframe>
 
 --- &twocol #id 
 ## <u>Weighted Distribution</u>
-Cox (1962) proposed an idea of Weighted Distribution,
+* Cox (1962) proposed an idea of Weighted Distribution,
 $${f}^{\ast}(x)=\frac{w(x)f(x)}{{E}_{f}(w(x))}$$
 
---- &twocol 
-## <u>Candidate Estimators</u>
+--- .class #id
+## <u>Candidate Estimators - Area</u>
+  1. Arithmetic Mean (AM) $$\frac{\sum_{i=1}^{n}{a}_{i}}{n}$$
+  2. Weighted Mean (WM) 
+  $$\frac{\sum_{i=1}^{n}{w}_{i}{a}_{i}}{\sum_{i=1}^{n}{w}_{i}}= \frac{n}{\sum_{i=1}^{n}\frac{1}{{a}_{i}}}$$
+  3. Maxima Likelihood Estimator (MLE) 
+$$\frac{\sum_{i=1}^{n}{a}_{i}}{2n}=\frac{AM}{2}$$
 
-*** =left width:65%
-* <b>Area:</b> 
+---
+
+## <b>Simulation Study - Area</b> <br /> 
+  * Suppose that the true distribution of  $Area\;\sim\;Exp(\theta)$. <br />
+  * The observed distribution of $Area\;\sim\;Gamma(2,\hat{\theta})$. 
+<br />
+  * The red dash line is $Gamma(2, \hat{\theta}),$ where $\hat{\theta} = \bar{a} = 1183$ 
+
+
+<iframe src="area.html"></iframe>
+
+--- .class 
+
+## <u>Simulation Study - Area</u>
+
+1. Set $N = 2000$; Ratio between $N$ and $n$ are $(5\%, 10\%, 30\%, 50\%, 70\%, 95\%)$; $Repeated Times = 1000$ and $\mu = 1000$.
+2. Generate $N$ samples from $Exp(\mu)$ as subpopulation of Area and calculate subpopulation mean, $\mu_A$, as the known parameter.
+3. Sample a set of samples with size n from subpopulation with sampling probability proportional to the value of Area with and without replacement. $n$ is the product of $N$ and a certain Ratio.
+
+--- .class 
+
+## <u>Results of Simulation Study - Area</u>
+
+plot for sampling with and without replacement 
+
+
+--- 
+
+## <u>Candidate Estimators - Perimeter</u>
   1. Arithmetic Mean (AM)
+  $$\frac{\sum_{i=1}^{n}{p}_{i}}{n}$$
   2. Weighted Mean (WM)
-  3. Maxima Likelihood Estimator (MLE)
+$$\frac{\sum_{i=1}^{n}{w}_{i}{a}_{i}}{\sum_{i=1}^{n}{w}_{i}}$$
+  3. Delta Method Esitmator (DME)
+$$\sqrt{4\pi}\sqrt{\frac{\bar{A}/2}{\bar{C}}}$$
+  4. 2nd Order Taylor's Approximation Estimator (2TAE)
+
+---
+
+## <b>Simulation Study - Perimeter</b> <br />
+* Suppose that the true distribution of  $Circularity\;\sim\;Beta(\alpha, \beta)$. <br />
+  * The observed distribution of $Circularity\;\sim\;Beta(15,5)$. 
+<br />
+  * The red dash line is $Beta(15, 5)$. 
+  * Area is independent to Perimeter. 
+  * \text{Perimeter}=\sqrt{4\pi}\sqrt{\frac{\text{Area}}{\text{Circularity}}}=f(\text{Area}, \text{Circularity})
+
+
+<iframe src="cir.html" allowtransparency="true"></iframe>
+
+---
+## <u>Simulation Study - Perimeter</u>
+1. Set $N = 2000$; $Ratio$ between $N$ and $n$ are $(5%, 10%, 30%, 50%, 70%, 95%)$; $Repeated Times = 1000$ and $\mu = 1000$.
+
+2. Generate $N$ samples from $Exp(\mu)$ distribution as subpopulation of Area and $N$ samples from $Beta(\alpha, \beta)$ as subpopulation of Circularity. Assume the observed Circularity data we have are representative enough for the population of Circularity, and $\alpha$ and $\beta$ are set to be 15 and 5 by observing the data we have.
+
+---
+## <u>Results of Simulation Study - Perimeter</u>
+
+---
+## <u>Best Estimators</u>
+* Area: 
+  <font color="red"><b>Weighted Mean</b></font> and <font color="red"><b>MLE</b></font>. 
+
+* Perimeter: 
+  <font color="red"><b>Weighted Mean</b></font> and <font color="red"><b>2TAE</b></font>. 
   
-* <b>Perimeter:</b>
-  1. Arithmetic Mean (AM)
-  2. Weighted Mean (WM)
-  3. Delta Method Estimator (DME)
+* Circularity: 
+  Arithmetic Mean
 
-*** =right width:35%
+* Aspect Ratio: 
+  Arithmetic Mean
 
-<iframe src="scatter_p.html"></iframe>
+---
+## <u>Hypothesis Test</u>
+* Overall Hypothesis Test: 
 
---- &twocol 
-## <u>Candidate Estimators</u>
+* Pairwise Comparison Test: 
 
-*** =left width:55%
-* <b>Circularity:</b>
-  1. Arithmetic Mean (AM)
+--- 
+## <u>Hypothesis Test </u>
+  * Reasons: 
+    * Area and Perimeter are size-biased. 
+    * Circularity and Aspect Ratio, the data violated the normality assumption of ANOVA and T-test. 
 
-* <b>Aspect Ratio:</b>
-  1. Arithmetic Mean (AM)
+  * Overall Test (Permutation Test of ANOVA): 
+    significance level = $5\%$
+  * Pairwsie Comparison Test (Permutation Test of T-test):
+    Bonferroni’s correction is a method to control Strong Familywise Error Rate in multi- comparison hypothesis tests and to have simultaneous confidence interval for the mean differences.
+    significance level = $\frac{5\%}{3} = 0.0167$ 
 
-*** =right width:45%
+---
+## <u>Results for the Hypothesis Test </u>
+The tables   
 
-<iframe src="scatter_c_ar.html"></iframe>
+---
+## <u>Bootstrapping Confidence Interval for the population Means</u>
+The graphs 
+
+---
+## <u>Bootstrapping Confidence Interval for the differences</u>
+
+---
+## Conclusions 
+ * The results of our analysis showed that generally mitochondria located in Middle of the mus- cle fiber cell have larger Area, Perimeter and Circularity which means to support muscle contraction more energy is needed in Middle. 
+  * Use Nonparametric Weighted Mean as the best estimator for population mean and do hypothesis test based on this estimator. (because of none distribution assumptions)
+  * I would also suggest them to use Sampling With Replacement(SWR) rather than Sampling Without Replacement(SWOR) in their sampling scheme because as we can see in the Simulation section the performance of Weighted Mean is not desirable when the case is SWOR unless they can assure the Ratio between population and samples are around 10% or less. Finding the best estimator for SWOR is a potential area for future work.
+  
+---
+## Discussion 
+  * Based on the result of simulation study, we expect Nonparametric Weighted Mean should have similar results with the Parametric Estimators (MLE for Area and 2TAE for Perimeter) but wider confidence interval for the Nonparametric Weighted Mean. However, as we see in Figure 7.2.1 and Table 7.2.1, in our data things are not like what we expected. 
+  * the improper distribution assumptions on Area and Circularity. Hence, in the future the robustness of the distribution assumptions can be an interesting topic to work on too.
 

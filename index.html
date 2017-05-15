@@ -235,11 +235,11 @@ Aspect Ratio is equal to \(\frac{Length}{Width}\). <br />
   </hgroup>
   <article data-timings="">
     
-<div style='float:left;width:;' class='centered'>
+<div style='float:left; position:absolute; left:1; width:50%;' class='centered'>
   <iframe src="hist_a.html" allowtransparency="true"></iframe>
 
 </div>
-<div style='float:right;width:;'>
+<div style='float:right; position:absolute; right:0; width:50%;'>
   <iframe src="box_a.html" allowtransparency="true"></iframe>
 
 </div>
@@ -253,11 +253,11 @@ Aspect Ratio is equal to \(\frac{Length}{Width}\). <br />
   </hgroup>
   <article data-timings="">
     
-<div style='float:left;width:;' class='centered'>
+<div style='float:left; position:absolute; left:1; width:50%;' class='centered'>
   <iframe src="hist_p.html" allowtransparency="true"></iframe>
 
 </div>
-<div style='float:right;width:;'>
+<div style='float:right; position:absolute; right:0; width:50%;'>
   <iframe src="box_p.html" allowtransparency="true"></iframe>
 
 </div>
@@ -271,11 +271,11 @@ Aspect Ratio is equal to \(\frac{Length}{Width}\). <br />
   </hgroup>
   <article data-timings="">
     
-<div style='float:left;width:;' class='centered'>
+<div style='float:left; position:absolute; left:1; width:50%;' class='centered'>
   <iframe src="hist_c.html" allowtransparency="true"></iframe>
 
 </div>
-<div style='float:right;width:;'>
+<div style='float:right; position:absolute; right:0; width:50%;'>
   <iframe src="box_c.html" allowtransparency="true"></iframe>
 
 </div>
@@ -289,11 +289,11 @@ Aspect Ratio is equal to \(\frac{Length}{Width}\). <br />
   </hgroup>
   <article data-timings="">
     
-<div style='float:left;width:;' class='centered'>
+<div style='float:left; position:absolute; left:1; width:50%;' class='centered'>
   <iframe src="hist_ar.html" allowtransparency="true"></iframe>
 
 </div>
-<div style='float:right;width:;'>
+<div style='float:right; position:absolute; right:0; width:50%;'>
   <iframe src="box_ar.html" allowtransparency="true"></iframe>
 
 </div>
@@ -306,14 +306,12 @@ Aspect Ratio is equal to \(\frac{Length}{Width}\). <br />
     <h2><u>Data Exploration: Scatter Plots</u></h2>
   </hgroup>
   <article data-timings="">
-    <p>Perimeter, Circularity and Aspect Ratio</p>
+    <iframe src="scatter.html"></iframe>
 
-<iframe src="scatter.html"></iframe>
-
-<div style='float:left;width:;' class='centered'>
+<div style='float:left; position:absolute; left:1; width:;' class='centered'>
   
 </div>
-<div style='float:right;width:;'>
+<div style='float:right; position:absolute; right:0; width:;'>
   
 </div>
   </article>
@@ -325,77 +323,260 @@ Aspect Ratio is equal to \(\frac{Length}{Width}\). <br />
     <h2><u>Weighted Distribution</u></h2>
   </hgroup>
   <article data-timings="">
-    <p>Cox (1962) proposed an idea of Weighted Distribution,
-\[{f}^{\ast}(x)=\frac{w(x)f(x)}{{E}_{f}(w(x))}\]</p>
+    <ul>
+<li>Cox (1962) proposed an idea of Weighted Distribution,
+\[{f}^{\ast}(x)=\frac{w(x)f(x)}{{E}_{f}(w(x))}\]</li>
+</ul>
 
-<div style='float:left;width:;' class='centered'>
+<div style='float:left; position:absolute; left:1; width:;' class='centered'>
   
 </div>
-<div style='float:right;width:;'>
+<div style='float:right; position:absolute; right:0; width:;'>
   
 </div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-18" style="background:;">
+<slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2><u>Candidate Estimators</u></h2>
+    <h2><u>Candidate Estimators - Area</u></h2>
   </hgroup>
   <article data-timings="">
-    
-<div style='float:left;width:65%;' class='centered'>
-  <ul>
-<li><p><b>Area:</b> </p>
+    <ol>
+<li>Arithmetic Mean (AM) \[\frac{\sum_{i=1}^{n}{a}_{i}}{n}\]</li>
+<li>Weighted Mean (WM) 
+\[\frac{\sum_{i=1}^{n}{w}_{i}{a}_{i}}{\sum_{i=1}^{n}{w}_{i}}= \frac{n}{\sum_{i=1}^{n}\frac{1}\]</li>
+<li>Maxima Likelihood Estimator (MLE) 
+\[\frac{\sum_{i=1}^{n}{a}_{i}}{2n}=\frac{AM}{2}\]</li>
+</ol>
 
-<ol>
-<li>Arithmetic Mean (AM)</li>
-<li>Weighted Mean (WM)</li>
-<li>Maxima Likelihood Estimator (MLE)</li>
-</ol></li>
-<li><p><b>Perimeter:</b></p>
-
-<ol>
-<li>Arithmetic Mean (AM)</li>
-<li>Weighted Mean (WM)</li>
-<li>Delta Method Estimator (DME)</li>
-</ol></li>
-</ul>
-
-</div>
-<div style='float:right;width:35%;'>
-  <iframe src="scatter_p.html"></iframe>
-
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-19" style="background:;">
   <hgroup>
-    <h2><u>Candidate Estimators</u></h2>
+    <h2><b>Simulation Study - Area</b> <br /></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Suppose that the true distribution of  \(Area\;\sim\;Exp(\theta)\). <br /></li>
+<li>The observed distribution of \(Area\;\sim\;Gamma(2,\hat{\theta})\). 
+<br /></li>
+<li>The red dash line is \(Gamma(2, \hat{\theta}),\) where \(\hat{\theta} = \bar{a} = 1183\) </li>
+</ul>
+
+<iframe src="area.html"></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-20" style="background:;">
+  <hgroup>
+    <h2><u>Simulation Study - Area</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Set \(N = 2000\); Ratio between \(N\) and \(n\) are \((5\%, 10\%, 30\%, 50\%, 70\%, 95\%)\); \(Repeated Times = 1000\) and \(\mu = 1000\).</li>
+<li>Generate \(N\) samples from \(Exp(\mu)\) as subpopulation of Area and calculate subpopulation mean, \(\mu_A\), as the known parameter.</li>
+<li>Sample a set of samples with size n from subpopulation with sampling probability proportional to the value of Area with and without replacement. \(n\) is the product of \(N\) and a certain Ratio.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-21" style="background:;">
+  <hgroup>
+    <h2><u>Results of Simulation Study - Area</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>plot for sampling with and without replacement </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2><u>Candidate Estimators - Perimeter</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Arithmetic Mean (AM)
+\[\frac{\sum_{i=1}^{n}{p}_{i}}{n}\]</li>
+<li>Weighted Mean (WM)
+\[\frac{\sum_{i=1}^{n}{w}_{i}{a}_{i}}{\sum_{i=1}^{n}{w}_{i}}\]</li>
+<li>Delta Method Esitmator (DME)
+\[\sqrt{4\pi}\sqrt{\frac{\bar{A}/2}{\bar{C}}}\]</li>
+<li>2nd Order Taylor&#39;s Approximation Estimator (2TAE)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2><b>Simulation Study - Perimeter</b> <br /></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Suppose that the true distribution of  \(Circularity\;\sim\;Beta(\alpha, \beta)\). <br />
+
+<ul>
+<li>The observed distribution of \(Circularity\;\sim\;Beta(15,5)\). 
+<br /></li>
+<li>The red dash line is \(Beta(15, 5)\). </li>
+<li>Area is independent to Perimeter. </li>
+<li>\text{Perimeter}=\sqrt{4\pi}\sqrt{\frac{\text{Area}}{\text{Circularity}}}=f(\text{Area}, \text{Circularity})</li>
+</ul></li>
+</ul>
+
+<iframe src="cir.html" allowtransparency="true"></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2><u>Simulation Study - Perimeter</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Set \(N = 2000\); \(Ratio\) between \(N\) and \(n\) are \((5%, 10%, 30%, 50%, 70%, 95%)\); \(Repeated Times = 1000\) and \(\mu = 1000\).</p></li>
+<li><p>Generate \(N\) samples from \(Exp(\mu)\) distribution as subpopulation of Area and \(N\) samples from \(Beta(\alpha, \beta)\) as subpopulation of Circularity. Assume the observed Circularity data we have are representative enough for the population of Circularity, and \(\alpha\) and \(\beta\) are set to be 15 and 5 by observing the data we have.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2><u>Results of Simulation Study - Perimeter</u></h2>
   </hgroup>
   <article data-timings="">
     
-<div style='float:left;width:55%;' class='centered'>
-  <ul>
-<li><p><b>Circularity:</b></p>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<ol>
-<li>Arithmetic Mean (AM)</li>
-</ol></li>
-<li><p><b>Aspect Ratio:</b></p>
-
-<ol>
-<li>Arithmetic Mean (AM)</li>
-</ol></li>
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2><u>Best Estimators</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Area: 
+<font color="red"><b>Weighted Mean</b></font> and <font color="red"><b>MLE</b></font>. </p></li>
+<li><p>Perimeter: 
+<font color="red"><b>Weighted Mean</b></font> and <font color="red"><b>2TAE</b></font>. </p></li>
+<li><p>Circularity: 
+Arithmetic Mean</p></li>
+<li><p>Aspect Ratio: 
+Arithmetic Mean</p></li>
 </ul>
 
-</div>
-<div style='float:right;width:45%;'>
-  <iframe src="scatter_c_ar.html"></iframe>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-</div>
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2><u>Hypothesis Test</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Overall Hypothesis Test: </p></li>
+<li><p>Pairwise Comparison Test: </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2><u>Hypothesis Test </u></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Reasons: </p>
+
+<ul>
+<li>Area and Perimeter are size-biased. </li>
+<li>Circularity and Aspect Ratio, the data violated the normality assumption of ANOVA and T-test. </li>
+</ul></li>
+<li><p>Overall Test (Permutation Test of ANOVA): 
+significance level = \(5\%\)</p></li>
+<li><p>Pairwsie Comparison Test (Permutation Test of T-test):
+Bonferroni’s correction is a method to control Strong Familywise Error Rate in multi- comparison hypothesis tests and to have simultaneous confidence interval for the mean differences.
+significance level = \(\frac{5\%}{3} = 0.0167\) </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2><u>Results for the Hypothesis Test </u></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The tables   </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2><u>Bootstrapping Confidence Interval for the population Means</u></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The graphs </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2><u>Bootstrapping Confidence Interval for the differences</u></h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The results of our analysis showed that generally mitochondria located in Middle of the mus- cle fiber cell have larger Area, Perimeter and Circularity which means to support muscle contraction more energy is needed in Middle. 
+
+<ul>
+<li>Use Nonparametric Weighted Mean as the best estimator for population mean and do hypothesis test based on this estimator. (because of none distribution assumptions)</li>
+<li>I would also suggest them to use Sampling With Replacement(SWR) rather than Sampling Without Replacement(SWOR) in their sampling scheme because as we can see in the Simulation section the performance of Weighted Mean is not desirable when the case is SWOR unless they can assure the Ratio between population and samples are around 10% or less. Finding the best estimator for SWOR is a potential area for future work.</li>
+</ul></li>
+</ul>
+
+<hr>
+
+<h2>Discussion</h2>
+
+<ul>
+<li>Based on the result of simulation study, we expect Nonparametric Weighted Mean should have similar results with the Parametric Estimators (MLE for Area and 2TAE for Perimeter) but wider confidence interval for the Nonparametric Weighted Mean. However, as we see in Figure 7.2.1 and Table 7.2.1, in our data things are not like what we expected. </li>
+<li>the improper distribution assumptions on Area and Circularity. Hence, in the future the robustness of the distribution assumptions can be an interesting topic to work on too.</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -508,14 +689,92 @@ Aspect Ratio is equal to \(\frac{Length}{Width}\). <br />
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='<u>Candidate Estimators</u>'>
+        data-slide=18 title='<u>Candidate Estimators - Area</u>'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='<u>Candidate Estimators</u>'>
+        data-slide=19 title='<b>Simulation Study - Area</b> <br />'>
          19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='<u>Simulation Study - Area</u>'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='<u>Results of Simulation Study - Area</u>'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='<u>Candidate Estimators - Perimeter</u>'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='<b>Simulation Study - Perimeter</b> <br />'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='<u>Simulation Study - Perimeter</u>'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='<u>Results of Simulation Study - Perimeter</u>'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='<u>Best Estimators</u>'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='<u>Hypothesis Test</u>'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='<u>Hypothesis Test </u>'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='<u>Results for the Hypothesis Test </u>'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='<u>Bootstrapping Confidence Interval for the population Means</u>'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='<u>Bootstrapping Confidence Interval for the differences</u>'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Conclusions'>
+         32
       </a>
     </li>
   </ul>
