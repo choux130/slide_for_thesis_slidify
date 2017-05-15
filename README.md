@@ -1,1 +1,1 @@
-These repo is all about how I tried to use Slidify to create a slide for my master defence. In the end, I abandoned Slidify and chose to use ioslides. Please check out the repo, `slide_for_thesis_ioslides`, to see my final work and my comparison between Slidify and ioslides. 
+These repo is all about how I tried to use Slidify to create a slide for my master defence. In the end, I abandoned Slidify and chose to use ioslides. Check out the repo, `slide_for_thesis_ioslides`, to see my final work and my comparison between Slidify and ioslides. 
