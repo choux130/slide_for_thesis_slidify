@@ -1,2 +1,1 @@
-This is the slides for my master thesis, Analysis of Size-Biased Mitochondria Data.
-The file was compiled by using the R package, [slidify](http://slidify.org). 
+These repo is all about how I tried to use Slidify to create a slide for my master defence. In the end, I abandoned Slidify and chose to use ioslides. Please check out the repo, `slide_for_thesis_ioslides`, to see my final work and my comparison between Slidify and ioslides. 
