@@ -167,7 +167,7 @@ Circularity is equal to $\frac{4 \pi Area}{Perimeter^2}$. <br />
 ## <u>Data Exploration: Scatter Plots</u>
 
 
-<iframe src="scatter.html"></iframe>
+<iframe src="scatter.html" width="200" height="200"></iframe>
 
 --- &twocol #id 
 ## <u>Weighted Distribution</u>
@@ -191,6 +191,7 @@ $$\frac{\sum_{i=1}^{n}{a}_{i}}{2n}=\frac{AM}{2}$$
   * The red dash line is $Gamma(2, \hat{\theta}),$ where $\hat{\theta} = \bar{a} = 1183$ 
 
 
+change the size of the graph
 <iframe src="area.html"></iframe>
 
 --- .class 

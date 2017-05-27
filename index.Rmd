@@ -271,7 +271,7 @@ htmlwidgets::saveWidget(as_widget(gg), file = "scatter_c_ar.html")
 htmlwidgets::saveWidget(as_widget(p), file = "scatter_p.html")
 ```
 
-<iframe src="scatter.html"></iframe>
+<iframe src="scatter.html" width="200" height="200"></iframe>
 
 --- &twocol #id 
 ## <u>Weighted Distribution</u>
